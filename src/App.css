@@ -5,14 +5,30 @@
 
 .form-design{
   padding-top: 15px;
-    padding-bottom: 15px;
-    background-color: aliceblue;
+  padding-bottom: 15px;
+  background-color: aliceblue;
+  border-radius: 20px;
+}
+
+.f-icon {
+  font-size: 25px !important;
 }
 
 .bg-title{
   color: #117a8b;
   font-family: ui-monospace;
   border-bottom: 3px solid;
+}
+
+.off-title {
+  color: white;
+  font-family: ui-monospace;
+  border-bottom: 3px solid;
+}
+
+.list-ti {
+  color: #117a8b;
+  font-family: ui-monospace;
 }
 
 .list-header {
@@ -33,9 +49,39 @@
   color: black;
 }
 
+.w-70 {
+  width: 67px;
+}
+
+.font-fam {
+font-size: 13px !important;
+}
+
+.b-col {
+  background-color: white;
+}
+
+.list-button {
+  background: white;
+  border-radius: 32px;
+  height: 85px;
+  font-size: 22px;
+}
+
+.search-class {
+  height: 40px !important;
+  width: 100% !important;
+  border: none !important;
+}
+
+.post-cl {
+  background-color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
 
 .head-col {
-  background-image: linear-gradient(to left, rgba(255,0,0,0), #0062cc);
+  background-image: linear-gradient(to left, rgba(255,0,0,0), #117a8b);
   color: aliceblue;
 }
 

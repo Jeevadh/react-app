@@ -50,7 +50,7 @@ const Add = () => {
         <Container>
             <Row>
                 <Col className='form-design mt-4'>
-                    <header><h2 className='text-left bg-title'>Add Post</h2></header>
+                    <header><h2 className='text-left bg-title'><i class="fa fa-plus-circle f-icon"></i> Add Post</h2></header>
                     <Form className="text-left f-size list-header" noValidate validated={validated} onSubmit={handleSubmit}>
                         <Form.Group controlId="title">
                             <Form.Label className="text-dark mb-0"><h5><strong>Title</strong></h5></Form.Label>

@@ -71,7 +71,7 @@ const Edit = () => {
         <Container>
             <Row >
                 <Col className = 'form-design mt-4'> 
-                <header><h2 className='text-left bg-title'>Edit Post</h2></header>
+                <header><h2 className='text-left bg-title'><i class="fa fa-pencil f-icon"></i> Edit Post</h2></header>
                     <Form className="text-left mt-3 list-header" noValidate validated={validated} onSubmit={Submit}>
                         <Form.Group controlId="title">
                             <Form.Label className="text-dark mb-0"><h5><strong>Title</strong></h5></Form.Label>

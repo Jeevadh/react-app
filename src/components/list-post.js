@@ -4,6 +4,7 @@ import { Button, Modal, Row, Col, Spinner } from 'react-bootstrap';
 import { ToastContainer, toast } from 'react-toastify';
 import { useHistory } from 'react-router-dom';
 import  axios  from 'axios';
+import Moment from 'react-moment';
 import Pagination from "react-js-pagination";
 
 
@@ -14,6 +15,8 @@ const List = () => {
     const [loading, load] = useState(false);
     const [postData, setPost] = useState({ showPost: false, selectedList: {} });
     const [lists, setList] = useState({ fullList: [], list: [], activePage: 1 });
+    const dateToFormat = new Date();
+
 
     useEffect((params) => {
         getList();
@@ -92,14 +95,16 @@ const List = () => {
             <div className="container p-3 p-md-4 list-header">
                 <div className="col-12 ">
                     <div>
-                        <h2 className=" bg-title text-center">Mediwave React Project</h2>
+                        <h2 className="off-title text-center">Mediwave React Project</h2>
                     </div>
-                    <div className="d-flex pb-4 justify-content-between mt-4">
-                        <h2 className="pb-0 mb-0 text-dark">List of Posts</h2>
-                        <Link to="/add-post">
-                            <button className="btn btn-primary"><i className="fas fa-plus-circle" aria-hidden="true"></i>
-                                <span className='pl-2'>Add Post</span></button>
+                     <div className = 'col-12 list-button mt-4'>
+                     <Link to="/add-post">
+                           <i className="fas fa-plus-circle mt-4" aria-hidden="true"></i>
+                                <span className='pl-2 mt-4'>Create New Post</span>
                         </Link>
+                     </div>
+                     <div className="col- 12 d-flex justify-content-between mt-4 post-cl">
+                    <header><h2 className='text-left list-ti pl-3 mt-2'>List of Posts</h2></header>
                     </div>
 
                     <ul className="list-group text-left">
@@ -111,26 +116,28 @@ const List = () => {
                                     key={index}
                                 >
                                     <div className="row align-items-start p-3">
-                                        <div className="col-12 col-md-10">
+                                        <div className="col-12 col-md-12">
                                             <h4>
                                                 <strong>{item.title}</strong>
                                             </h4>
                                             <span> {item.body}</span>
 
                                         </div>
-                                        <div className="col-12 col-md-2 text-right  mt-2">
-                                            <i className="fas fa-info-circle pr-2 pr-md-2 cursor" onClick={() => openModal(item)}></i>
-                                            <i className="fas text-primary fa-pencil-alt pr-2 pr-md-2 cursor" onClick={() => editPost(item)}></i>
-                                            <i className="fas text-danger fa-trash-alt cursor" onClick={() => handleShow(item)}></i>
-                                        </div>
+                                    </div>
+                                   <div className="row align-items-start p-3">
+                                    <div className="col-12 col-md-12 text-left  mt-2">
+                                        <button className="btn btn-info w-70" onClick={() => openModal(item)}><span>Info</span></button>
+                                        <button className="btn btn-success ml-2 w-70" onClick={() => editPost(item)}><span>Edit</span></button>
+                                        <button className="btn btn-danger ml-2 w-70" onClick={() => handleShow(item)}><span>Delete</span></button>
+                                       <span className = 'float-right font-fam mt-3'> <strong> <Moment date={dateToFormat} format= "ll h:mm a" /></strong></span>
+                                    </div>
                                     </div>
                                 </li>
 
                             ))}
                     </ul>
-                </div>
-                {lists.count &&
-                    <Col className="d-flex justify-content-center">
+                    {lists.count &&
+                    <Col className="d-flex justify-content-center b-col">
                         <Pagination
                             activePage={lists.activePage}
                             itemsCountPerPage={10}
@@ -145,6 +152,7 @@ const List = () => {
                     </Col>
 
                 }
+                </div>
 
                 <Modal show={deleteData.showModal} onHide={closeModal} backdrop="static" keyboard={false}>
                     <Modal.Header className='head-col'>
@@ -199,3 +207,7 @@ const List = () => {
 
 }
 export default List;
+
+
+
+
