@@ -125,11 +125,11 @@ const List = () => {
                                         </div>
                                     </div>
                                    <div className="row align-items-start p-3">
-                                    <div className="col-12 col-md-12 text-left  mt-2">
+                                    <div className="col-12 col-md-12 text-right  mt-2">
+                                        <span className = 'float-left font-fam mt-3'> <strong> <Moment date={dateToFormat} format= "ll h:mm a" /></strong></span>
                                         <button className="btn btn-info w-70" onClick={() => openModal(item)}><span>Info</span></button>
                                         <button className="btn btn-success ml-2 w-70" onClick={() => editPost(item)}><span>Edit</span></button>
                                         <button className="btn btn-danger ml-2 w-70" onClick={() => handleShow(item)}><span>Delete</span></button>
-                                       <span className = 'float-right font-fam mt-3'> <strong> <Moment date={dateToFormat} format= "ll h:mm a" /></strong></span>
                                     </div>
                                     </div>
                                 </li>

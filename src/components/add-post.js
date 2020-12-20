@@ -54,13 +54,13 @@ const Add = () => {
                     <Form className="text-left f-size list-header" noValidate validated={validated} onSubmit={handleSubmit}>
                         <Form.Group controlId="title">
                             <Form.Label className="text-dark mb-0"><h5><strong>Title</strong></h5></Form.Label>
-                            <Form.Control required type="text" onChange={handleInputChange} value={input.title} name="title" placeholder="Enter Title" />
+                            <Form.Control required type="text" className = 'border-0' onChange={handleInputChange} value={input.title} name="title" placeholder="Enter the Title" />
                             <Form.Control.Feedback type="invalid">*Title is required</Form.Control.Feedback>
                         </Form.Group>
 
                         <Form.Group controlId="body">
                             <Form.Label className="text-dark mb-0"><h5><strong>Description</strong></h5></Form.Label>
-                            <Form.Control required as="textarea" rows={3} onChange={handleInputChange} value={input.body} name="body" placeholder="Enter description" />
+                            <Form.Control required as="textarea" className = 'border-0 h-100' rows={3} onChange={handleInputChange} value={input.body} name="body" placeholder="Enter the description" />
                             <Form.Control.Feedback type="invalid">*Description is required</Form.Control.Feedback>
                         </Form.Group>
 

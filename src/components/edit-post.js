@@ -75,13 +75,13 @@ const Edit = () => {
                     <Form className="text-left mt-3 list-header" noValidate validated={validated} onSubmit={Submit}>
                         <Form.Group controlId="title">
                             <Form.Label className="text-dark mb-0"><h5><strong>Title</strong></h5></Form.Label>
-                            <Form.Control required type="text" onChange={handleInput} value={input.title} name="title" placeholder="Enter Title" />
+                            <Form.Control required type="text" className = 'border-0' onChange={handleInput} value={input.title} name="title" placeholder="Enter the Title" />
                             <Form.Control.Feedback type="invalid" className="text-col">*Title is required</Form.Control.Feedback>
                         </Form.Group>
 
                         <Form.Group controlId="body">
                             <Form.Label className="text-dark mb-0"><h5><strong>Description</strong></h5></Form.Label>
-                            <Form.Control required as="textarea" rows={6} onChange={handleInput} value={input.body} name="body"placeholder="Enter description" />
+                            <Form.Control required as="textarea" className = 'border-0 h-100' rows={6} onChange={handleInput} value={input.body} name="body"placeholder="Enter the description" />
                             <Form.Control.Feedback type="invalid" className="text-col">*Description is required</Form.Control.Feedback>
                         </Form.Group>
 
